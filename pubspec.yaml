@@ -1,0 +1,65 @@
+name: tic_tac_toe_game
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.5+6
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  rxdart: ^0.27.0
+  google_mobile_ads: ^0.12.0
+#  page_transition:
+#  audioplayers:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_launcher_icons: ^0.9.2
+
+  flutter_native_splash: ^2.0.1+1
+
+flutter_native_splash:
+  color: "#000000"
+  image: assets/logo.png
+  branding: assets/branding.png
+  branding_mode: bottom
+  android: true
+  ios: true
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo.png"
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/sounds/
+
+  fonts:
+    - family: MomCake
+      fonts:
+        - asset: assets/fonts/momcake_bold.otf
+    - family: AhayHore
+      fonts:
+        - asset: assets/fonts/ahay_hore.otf
+    - family: Mortend
+      fonts:
+        - asset: assets/fonts/mortend.ttf
+    - family: Weloved
+      fonts:
+        - asset: assets/fonts/weloved_free.otf
+
