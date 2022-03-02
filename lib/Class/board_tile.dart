@@ -12,6 +12,7 @@ class BoardTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       width: dimension,
       height: dimension,

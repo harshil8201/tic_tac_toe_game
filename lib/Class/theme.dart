@@ -7,6 +7,7 @@ class XGradientMask extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return ShaderMask(
       blendMode: BlendMode.srcATop,
       shaderCallback: (Rect bounds) {
