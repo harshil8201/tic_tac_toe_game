@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "982193037808",
+    "project_id": "tic--tac-toe-ae01a",
+    "storage_bucket": "tic--tac-toe-ae01a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982193037808:android:82b457cfb82329b1fd3d35",
+        "android_client_info": {
+          "package_name": "com.unionsoftwareit.tic_tac_toe_game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982193037808-p251lpmppq5ja75st0l8sg4d52iq1jmj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.unionsoftwareit.tic_tac_toe_game",
+            "certificate_hash": "a7fddd9af546e393dd365b62c77e2e2eb54fc3d7"
+          }
+        },
+        {
+          "client_id": "982193037808-qa3i5vgdn43qcqfkjevuebgenb1qg1bn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMiHLeiGIguqNtwKs3ljVNRBONVU1qc_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982193037808-qa3i5vgdn43qcqfkjevuebgenb1qg1bn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
