@@ -1,3 +1,5 @@
+// ignore_for_file: must_call_super
+
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:tic_tac_toe_game/Ad%20Hepler/ad_helper.dart';
@@ -227,37 +229,35 @@ class _PlayPageState extends State<PlayPage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Flexible(
-                    child: GridView.builder(
-                        shrinkWrap: true,
-                        itemCount: 9,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          mainAxisSpacing: 2,
-                          crossAxisSpacing: 2,
-                          crossAxisCount: 3,
-                        ),
-                        itemBuilder: (BuildContext context, int index) {
-                          return GestureDetector(
-                            onTap: () {
-                              _tapped(index);
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.white)),
-                              child: Center(
-                                child: Text(
-                                  displayElement[index],
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 60,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                  child: GridView.builder(
+                      shrinkWrap: true,
+                      itemCount: 9,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        mainAxisSpacing: 2,
+                        crossAxisSpacing: 2,
+                        crossAxisCount: 3,
+                      ),
+                      itemBuilder: (BuildContext context, int index) {
+                        return GestureDetector(
+                          onTap: () {
+                            _tapped(index);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.white)),
+                            child: Center(
+                              child: Text(
+                                displayElement[index],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
-                          );
-                        }),
-                  ),
+                          ),
+                        );
+                      }),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
@@ -522,237 +522,3 @@ class _PlayPageState extends State<PlayPage> {
     filledBoxes = 0;
   }
 }
-
-// Widget _boardTiles() {
-//   return Builder(
-//     builder: (context) {
-//       final boardDimension = MediaQuery.of(context).size.width;
-//       final tileDimension = boardDimension / 3;
-//
-//       return Container(
-//         width: boardDimension,
-//         height: boardDimension,
-//         child: Column(
-//           children: chunk(_boardState, 3).asMap().entries.map((entry) {
-//             final chunkIndex = entry.key;
-//             final tileStateChunk = entry.value;
-//
-//             return Row(
-//               children: tileStateChunk.asMap().entries.map((innerEntry) {
-//                 final innerIndex = innerEntry.key;
-//                 final tileState = innerEntry.value;
-//                 final tileIndex = (chunkIndex * 3) + innerIndex;
-//
-//                 return BoardTile(
-//                   tileState: tileState,
-//                   dimension: tileDimension,
-//                   onPressed: () => _updateTileStateForIndex(tileIndex),
-//                   key: null,
-//                 );
-//               }).toList(),
-//             );
-//           }).toList(),
-//         ),
-//       );
-//     },
-//   );
-// }
-//
-// void _updateTileStateForIndex(int selectedIndex) {
-//   if (_boardState[selectedIndex] == TileState.EMPTY) {
-//     setState(
-//       () {
-//         _boardState[selectedIndex] = _currentTurn;
-//         _currentTurn = _currentTurn == TileState.CROSS
-//             ? TileState.CIRCLE
-//             : TileState.CROSS;
-//         // if (_currentTurn == TileState.CROSS) {
-//         //   _audioCache.play('oclick.mp3');
-//         // } else if (_currentTurn == TileState.CIRCLE) {
-//         //   _audioCache.play('xclick.mp3');
-//         // }
-//       },
-//     );
-//
-//     final winner = _findWinner();
-//     if (winner != null) {
-//       print('WINNER IS: $winner');
-//       _showWinnerDialog(winner);
-//     }
-//   } else {
-//     _showDrawDialog();
-//   }
-// }
-//
-// void _showDrawDialog() {
-//   showDialog(
-//     barrierDismissible: false,
-//     context: context,
-//     builder: (BuildContext context) {
-//       return AlertDialog(
-//         shape: RoundedRectangleBorder(
-//           borderRadius: BorderRadius.all(
-//             Radius.circular(20.0),
-//           ),
-//         ),
-//         title: Text(
-//           'DRAW',
-//           textAlign: TextAlign.center,
-//           style: TextStyle(
-//             letterSpacing: 2,
-//             fontSize: MediaQuery.of(context).size.height * 0.05,
-//             color: Colors.black,
-//             fontFamily: 'MomCake',
-//             fontWeight: FontWeight.bold,
-//           ),
-//         ),
-//         actions: <Widget>[
-//           TextButton(
-//             child: Text(
-//               'CONTINUE',
-//               style: TextStyle(
-//                 fontSize: MediaQuery.of(context).size.height * 0.025,
-//                 color: Colors.black,
-//                 fontFamily: 'MomCake',
-//                 fontWeight: FontWeight.bold,
-//               ),
-//             ),
-//             onPressed: () {
-//               _playAgain();
-//               Navigator.pop(context);
-//             },
-//           )
-//         ],
-//       );
-//     },
-//   );
-// }
-//
-// TileState _findWinner() {
-//   TileState Function(int, int, int) winnerForMatch = (a, b, c) {
-//     if (_boardState[a] != TileState.EMPTY) {
-//       if ((_boardState[a] == _boardState[b]) &&
-//           (_boardState[b] == _boardState[c])) {
-//         return _boardState[a];
-//       }
-//     }
-//     return null;
-//   };
-//
-//   final checks = [
-//     winnerForMatch(0, 1, 2),
-//     winnerForMatch(3, 4, 5),
-//     winnerForMatch(6, 7, 8),
-//     winnerForMatch(0, 3, 6),
-//     winnerForMatch(1, 4, 7),
-//     winnerForMatch(2, 5, 8),
-//     winnerForMatch(0, 4, 8),
-//     winnerForMatch(2, 4, 6),
-//   ];
-//
-//   TileState winner;
-//   for (int i = 0; i < checks.length; i++) {
-//     if (checks[i] != null) {
-//       winner = checks[i];
-//       break;
-//     }
-//   }
-//   return winner;
-// }
-//
-// void _showWinnerDialog(TileState tileState) {
-//   //final context = navigatorKey.currentState.overlay.context;
-//   showDialog(
-//     barrierDismissible: false,
-//     context: context,
-//     builder: (_) {
-//       return AlertDialog(
-//         shape: RoundedRectangleBorder(
-//           borderRadius: BorderRadius.all(
-//             Radius.circular(20.0),
-//           ),
-//         ),
-//         title: Text(
-//           'WINNER',
-//           textAlign: TextAlign.center,
-//           style: TextStyle(
-//             letterSpacing: 2,
-//             fontSize: MediaQuery.of(context).size.height * 0.05,
-//             color: Colors.black,
-//             fontFamily: 'MomCake',
-//             fontWeight: FontWeight.bold,
-//           ),
-//         ),
-//         content: tileState == TileState.CROSS
-//             ? XGradientMask(
-//                 child: Image.asset(
-//                   'assets/images/x.png',
-//                   color: Colors.white,
-//                 ),
-//               )
-//             : OGradientMask(
-//                 child: Image.asset(
-//                   'assets/images/o.png',
-//                   color: Colors.white,
-//                 ),
-//               ),
-//         actions: [
-//           TextButton(
-//             onPressed: () {
-//               _resetGame();
-//               Navigator.of(context).pop();
-//             },
-//             child: tileState == TileState.CROSS
-//                 ? XGradientMask(
-//                     child: Text(
-//                       'CONTINUE',
-//                       style: TextStyle(
-//                         fontSize: MediaQuery.of(context).size.height * 0.025,
-//                         color: Colors.white,
-//                         fontFamily: 'MomCake',
-//                         fontWeight: FontWeight.bold,
-//                       ),
-//                     ),
-//                   )
-//                 : OGradientMask(
-//                     child: Text(
-//                       'CONTINUE',
-//                       style: TextStyle(
-//                         fontSize: MediaQuery.of(context).size.height * 0.025,
-//                         color: Colors.white,
-//                         fontFamily: 'MomCake',
-//                         fontWeight: FontWeight.bold,
-//                       ),
-//                     ),
-//                   ),
-//           ),
-//         ],
-//       );
-//     },
-//   );
-//   if (tileState == TileState.CROSS) {
-//     exScore += 1;
-//   } else if (tileState == TileState.CIRCLE) {
-//     ohScore += 1;
-//   }
-// }
-//
-// void _resetGame() {
-//   setState(
-//     () {
-//       _boardState = List.filled(9, TileState.EMPTY);
-//       _currentTurn = TileState.CROSS;
-//     },
-//   );
-// }
-//
-// void _playAgain() {
-//   setState(() {
-//     _boardState = List.filled(9, TileState.EMPTY);
-//     if (_currentTurn == TileState.CIRCLE) {
-//       _currentTurn = TileState.CROSS;
-//     } else {
-//       _currentTurn = TileState.CIRCLE;
-//     }
-//   });
-// }

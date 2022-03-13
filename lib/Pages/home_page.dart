@@ -1,3 +1,5 @@
+// ignore_for_file: must_call_super
+
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';

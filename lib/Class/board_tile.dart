@@ -16,7 +16,7 @@ class BoardTile extends StatelessWidget {
     return Container(
       width: dimension,
       height: dimension,
-      child: FlatButton(
+      child: TextButton(
         onPressed: onPressed,
         child: _widgetForTileState(),
       ),
