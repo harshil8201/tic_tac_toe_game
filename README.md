@@ -1,5 +1,5 @@
 # tic_tac_toe_game
-![PicsArt_09-10-04 00 22](https://user-images.githubusercontent.com/83079592/159473617-19cd59cf-3119-48cd-8aec-0360a0fcbb6c.jpg)
+![image (2)](https://user-images.githubusercontent.com/83079592/159478637-52f055ec-6728-4cfd-860e-02d22e15f831.png)
 
 to download app,<br /> 
 visit: 
