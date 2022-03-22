@@ -1,6 +1,8 @@
 # tic_tac_toe_game
+![PicsArt_09-10-04 00 22](https://user-images.githubusercontent.com/83079592/159473617-19cd59cf-3119-48cd-8aec-0360a0fcbb6c.jpg)
 
-A new Flutter project.
+to download app,<br /> 
+visit: 
 https://play.google.com/store/apps/details?id=com.unionsoftwareit.tic_tac_toe_game
 ## Getting Started
 
