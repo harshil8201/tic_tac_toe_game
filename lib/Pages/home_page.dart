@@ -288,9 +288,9 @@ class _HomePageState extends State<HomePage> {
               alignment: Alignment.bottomCenter,
               child: InkWell(
                 onTap: () {
-                  if (_isRewardedAdReady) {
-                    _rewardedAd.show();
-                  }
+                  // if (_isRewardedAdReady) {
+                  //   _rewardedAd.show();
+                  // }
                   Navigator.push(
                     context,
                     MaterialPageRoute(

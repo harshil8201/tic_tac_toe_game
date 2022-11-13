@@ -133,9 +133,9 @@ class _PlayPageState extends State<PlayPage> {
                           ),
                           child: GestureDetector(
                             onTap: () {
-                              if (_isRewardedAdReady) {
-                                _rewardedAd.show();
-                              }
+                              // if (_isRewardedAdReady) {
+                              //   _rewardedAd.show();
+                              // }
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
@@ -356,9 +356,9 @@ class _PlayPageState extends State<PlayPage> {
                           ),
                           child: GestureDetector(
                             onTap: () {
-                              if (_isRewardedAdReady) {
-                                _rewardedAd.show();
-                              }
+                              // if (_isRewardedAdReady) {
+                              //   _rewardedAd.show();
+                              // }
                               _clearScoreBoard();
                             },
                             child: Icon(
